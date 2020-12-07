@@ -14,70 +14,195 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" href="#">Be Healthy</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item ">
-        <a class="nav-link" href="main.html">Home</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="blog.html">Blog<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About Us</a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Account
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="onclick">Sign In</a>
-          <a class="dropdown-item" href="Sign_Up.html">Sign Up</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
-<!--- Image Slider --->
-<div id="blog">
-    <div class="back">
-        <div class="cont-hav">
-            <div class="set">
-            <button class="edit">Edit</button>
-            <ul class="things">
-                <li class="friends">
-                    <a>Friends</a>
-                </li>
-                <li class="Messages">
-                    <a>Messages</a>
-                </li>
-                <li class="Posts">
-                    <a>Posts</a>
-                </li>
-            </ul>
-            <!-- <img class="photo" src="user.png"> -->
-            </div>
-            <div class="about">
-                <p>About me</p>
-                <button class="Add-Post">Add Post</button>
-            </div>
-            
-            
+  
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="#">Be Healthy</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"aria-expanded="false" aria-label="Toggle navigation">
+	    	<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+	    	<ul class="navbar-nav ml-auto">
+	      		<li class="nav-item ">
+	        		<a class="nav-link" href="main.html">Home</a>
+	      		</li>
+	      		<li class="nav-item active">
+	        		<a class="nav-link" href="blog.html">Recipes<span class="sr-only">(current)</span></a>
+	      		</li>
+	      		<li class="nav-item">
+					<a class="nav-link" href="#about">Tips</a>
+	      		</li>
+	      		<li class="nav-item">
+	    			<a class="nav-link" href="#">Contact</a>
+	      		</li>
+	      		<li class="nav-item dropdown">
+	        		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          			Account
+	        		</a>
+	        		<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	          			<a class="dropdown-item" href="onclick">Sign In</a>
+	          			<a class="dropdown-item" href="Sign_Up.html">Sign Up</a>
+	        		</div>
+	      		</li>
+	    	</ul>
+		</div>
+	</nav>
 
+	<div id="blog">
+    	<div class="back">
+        	<div id="cont-hav" class="cont-hav">
+            	<div id="col" class="rep-1">
+                	<img src="img/1-2.jpg">
+                	<button class="text" onclick="openRecipe(1)"><a href=#rec1>Vegetarian Pancakes</a></button>
+            	</div>
+            	<div  id="col" class="rep-2">
+            		<img src="img/3.jpg">
+                	<button class="text" onclick="openRecipe(2)"><a href=#rec2>Homemade jogurt</a></button>
+            	</div>
+            	<div  id="col" class="rep-3">
+                	<img src="img/3-2.jpg">
+                	<button class="text" onclick="openRecipe(3)"><a href=#rec3>Apple French Toast</a></button>
+            	</div>
+            	<div  id="col" class="rep-4">
+                	<img src="img/1.jpg">
+                	<button class="text" onclick="openRecipe(4)"><a href=#rec4>Raspberry Tart</a></button>
+            	</div>
+        	</div>
+    		<div class="openBtn">
+    			<button class="adding" onclick="openForm()">Add recipe</button>
+    		</div> 
+		    <div class="formPopup" id="myForm">
+				<form name="Form" class="form-container">
+		            <h1 class="head-popup">Submit a recipe</h1>
+		            
+					<label for="title"><b>Recipe Title</b></label>
+					<input id="title" type="text" placeholder="Enter Title" name="title" required>
+
+					<label for="servings"><b>Servings</b></label>
+					<input id="servings" type="number" placeholder="Enter number" name="servings" required>
+					<br>
+					<label for="url"><b>Image-URL</b></label>
+					<input id="url" type="text" placeholder="Enter URL" name="url">
+
+					<label for="ingridients"><b>Ingridients</b></label>
+					<input id="ingridients" type="text" placeholder="Enter ingridients" name="ingridients" required>
+
+					<label for="directions"><b>Directions</b></label>
+					<input id="directions" type="text" placeholder="Enter directions" name="directions" required></textarea>
+
+					<button type="button" class="btn" onclick="addRecipe()">Submit</button>
+					<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+		            
+		        </form>
+		    </div>
+		</div>
+	</div>
+    <div id="body-rec" class="body-rec">
+    	<div id="rec1" class="colm">
+    		<img src="img/1-2.jpg">
+    		<img src="img/cook_4.jpg">
+    		<img src="img/cook_1.jpg">
+    		<img src="img/cook_2.jpg">
+    		<img src="img/cook_3.jpg">
+        	<div class="colm-1">
+        			<h2>Vegetarian Pancakes</h2>
+        			<p>Servings: 4</p>
+        			<p>Ingridients: 
+        				<p class="opis">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        			</p>
+        			<p>Directions: 
+        				<p class="opis">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        			</p>
+        	</div>
         </div>
-            
-        
-    </div>
-                
+        	
+    	<div id="rec2" class="colm">
+    		<img src="img/1-2.jpg">
+    		<img src="img/cook_4.jpg">
+    		<img src="img/cook_1.jpg">
+    		<img src="img/cook_2.jpg">
+    		<img src="img/cook_3.jpg">
+        	<div class="colm-1">
+    			<h2>Homemade jogurt</h2>
+    			<p>Servings: 4</p>
+    			<p>Ingridients: 
+    				<p class="opis">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    			</p>
+    			<p>Directions: 
+    				<p class="opis">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    			</p>
+    		</div>
+    	</div>
+
+
+    	<div id="rec3" class="colm">
+    		<img src="img/1-2.jpg">
+    		<img src="img/cook_4.jpg">
+    		<img src="img/cook_1.jpg">
+    		<img src="img/cook_2.jpg">
+    		<img src="img/cook_3.jpg">
+        	<div class="colm-1">
+    			<h2>Apple French Toast</h2>
+    			<p>Servings: 4</p>
+    			<p>Ingridients: 
+    				<p class="opis">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    			</p>
+    			<p>Directions: 
+    				<p class="opis">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    			</p>
+        	</div>
+        </div>
+
+    	<div id="rec4" class="colm">
+    		<img src="img/1-2.jpg">
+    		<img src="img/cook_4.jpg">
+    		<img src="img/cook_1.jpg">
+    		<img src="img/cook_2.jpg">
+    		<img src="img/cook_3.jpg">
+        	<div class="colm-1">
+    			<h2>Raspberry Tart</h2>
+    			<p>Servings: 4</p>
+    			<p>Ingridients: 
+    				<p class="opis">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    			</p>
+    			<p>Directions: 
+    				<p class="opis">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    			</p>
+        	</div>
+        </div>
+    </div> 
 </div>
+<footer id="contact">
+    <p class="item1">Be Healthy<p>
+    <div class="item2">
+      <table>
+        <tr>
+          <td><a href="" title="Home Page">Home</a></td>
+          <td><a href="" title="Check out all recipes">Recipes</a></td>
+          <td><a href="" title="Best dishes for Holidays">Holidays</a></td>
+        </tr>
+        <tr>
+          <td><a href="" title="Best tools">Kitchen</a></td>
+          <td><a href="" title="Our contest">Contests</a></td>
+          <td><a href="" title="Everything about food">Food News</a></td>
+        </tr>
+        <tr>
+          <td><a href="" title="Our Magazines">Magazines</a></td>
+          <td><a href="" title="Everything about this blog">About Us</a></td>
+          <td><a href="" title="Help">How-To</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="item3">
+      <h6>Follow us on:</h6>
+      <a href="https://www.facebook.com/" target="_blank" title="Check out our facebook page"><img src="img/fb.png" alt="facebook"></a>
+      <a href="https://www.instagram.com/" target="_blank" title="Check out our instagram page"><img src="img/ins.png" alt="instagram"></a>
+      <a href="https://twitter.com/" target="_blank" title="Check out our twitter page"><img src="img/twi.png" alt="twitter"></a>
+                        <a href="https://www.pinterest.com/" target="_blank" title="Check out our pinterest page"><img src="/imgpi.png" alt="pinterest"></a>
+      <a href="https://www.youtube.com/" target="_blank" title="Check out our youtube page"><img src="/img/y.png" alt="youtube"></a>
+    </div>
+    <div class="item4"></div>
+    <div class="item6"></div>
+  </footer>
          
 
 
@@ -108,7 +233,135 @@
 
 
 
+<script>
+var numberOfRecipies = 4;
+var currentOpened = null;
 
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+function openRecipe(number) {
+	console.log(document.getElementById("rec" + number));
+	if (currentOpened != null) {
+		closeRecipe(currentOpened);
+	}
+	document.getElementById("rec" + number).style.display = "block";
+	currentOpened = number;
+} 
+
+function closeRecipe(number) {
+
+	document.getElementById("rec" + number).style.display = "none";
+	currentOpened = null;
+}
+
+
+
+function addRecipe() {
+  var title = document.getElementById("title").value;
+  var directions = document.getElementById("directions").value;
+  
+  if (title == "" || directions == "") {
+    document.getElementById("notFilled").innerHTML = "Please enter data!";
+  } else {
+    if (document.getElementById("url").value == "") {
+      document.getElementById("url").value = "image/recipe/noImage.jpg";
+    }
+    createRecipe();
+    closeForm();
+  }
+}
+
+function createBody() {
+	var title = document.getElementById("title").value;
+	var servings = document.getElementById("servings").value;
+	var url = document.getElementById("url").value;
+	var ingridients = document.getElementById("ingridients").value;
+	var directions = document.getElementById("directions").value;
+
+	var container = document.getElementById("body-rec");
+
+	var newColm = document.createElement("div");
+	newColm.id = "rec" + numberOfRecipies;
+	newColm.className = "colm";
+	container.appendChild(newColm);
+
+	var newLink = document.createElement("IMG");
+  	newLink.setAttribute("src", url);
+  	newColm.appendChild(newLink);
+
+  	var newDiv = document.createElement("div");
+  	newDiv.className = "colm-1";
+  	newColm.appendChild(newDiv);
+
+  	var newH = document.createElement("h2");
+  	newH.innerHTML = title;
+  	newDiv.appendChild(newH);
+
+  	var newP = document.createElement("p");
+  	newP.innerHTML = "Servings: " + servings;
+  	newDiv.appendChild(newP);
+
+  	var newPa = document.createElement("p");
+  	newPa.innerHTML = "Ingridients: ";
+  	newDiv.appendChild(newPa);
+
+  	var newPar = document.createElement("p");
+  	newPar.className = "opis";
+  	newPar.innerHTML = ingridients;
+  	newPa.appendChild(newPar);
+
+  	var newPd = document.createElement("p");
+  	newPd.innerHTML = "Directions: ";
+  	newDiv.appendChild(newPd);
+
+  	var newPdd = document.createElement("p");
+  	newPdd.className = "opis";
+  	newPdd.innerHTML = directions;
+  	newPd.appendChild(newPdd);
+
+
+}
+
+function createMenu() {
+
+var title = document.getElementById("title").value;
+  var url = document.getElementById("url").value;
+
+  var container = document.getElementById("cont-hav");
+
+  var newRep = document.createElement("div");
+  newRep.id = "col";
+  newRep.className =  "rep-" + numberOfRecipies;
+  container.appendChild(newRep);
+
+  var newLink = document.createElement("IMG");
+  newLink.setAttribute("src", url);
+  newRep.appendChild(newLink);
+
+  var newTitle = document.createElement("button");
+  newTitle.className = "text";
+  newTitle.setAttribute("onclick", "openRecipe(" + numberOfRecipies + ")");
+  newRep.appendChild(newTitle);
+
+  var newHref = document.createElement("a");
+  newHref.setAttribute("href", "#rec" + numberOfRecipies);
+  newHref.innerHTML = title;
+  newTitle.appendChild(newHref);
+}
+
+
+function createRecipe() {
+  numberOfRecipies++;
+  createMenu();
+  createBody();
+}
+</script>
 
 
 

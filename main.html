@@ -12,8 +12,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="style.css">
+    <script src=firebase.js></script>
+    <script src=login.js></script>
 </head>
 <body>
+    
+    
 
 <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Be Healthy</a>
@@ -21,84 +25,151 @@
     <span class="navbar-toggler-icon"></span>
   </button class="main">
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="blog.html">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About Us</a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Account
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="onclick">Sign In</a>
-          <a class="dropdown-item" href="Sign_Up.html">Sign Up</a>
-        </div>
-      </li>
-    </ul>
-  </div>
+    	<ul class="navbar-nav ml-auto">
+      		<li class="nav-item active">
+       		 	<a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+      		</li>
+      		<li class="nav-item">
+       			 <a class="nav-link" href="blog.html">Recipes</a>
+      		</li>
+      		<li class="nav-item">
+       			 <a class="nav-link" href="#about">Tips</a>
+      		</li>
+      		<li class="nav-item">
+        		<a class="nav-link" href="#contact">Contact</a>
+      		</li>
+      		<li class="nav-item dropdown">
+        		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          			Account
+        		</a>
+        		<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          			<a class="dropdown-item" href="onclick">Sign In</a>
+          			<a class="dropdown-item" href="Sign_Up.html">Sign Up</a>
+        		</div>
+      		</li>
+    	</ul>
+  	</div>
 </nav>
 
 <!--- Image Slider --->
 <div id="promo">
-	<div class="ekran container">
+	<div class="ekran">
 		<h1>Healthy recipes and food</h1>
 		<h2>Different people and thousands of experience</h2>
 		<p><h3>Try it with us</h3></p>
 
 		<p><button class="main" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign In</button><p>
 		<div id="id01" class="modal">
-  
- 		 <form class="modal-content animate" action="/action_page.php" method="post">
- 		 	<div class="sign-in">
- 		 		<h2>SIGN IN</h2>
- 		 	</div>
-    		<div class="container1">
+	  
+	 		 <form class="modal-content animate"  method="post">
+	 		 	<div class="sign-in">
+	 		 		<h2>SIGN IN</h2>
+	 		 	</div>
+	    		<div class="container1">
 
-      			<label for="uname"><b>Username</b></label>
-      			<input type="text" placeholder="Enter Username" name="uname" required>
+	      			<label for="uname"><b>Username</b></label>
+	      			<input type="text" placeholder="Enter Username" name="uname" required>
 
-      			<label for="psw"><b>Password</b></label>
-      			<input type="password" placeholder="Enter Password" name="psw" required>
+	      			<label for="psw"><b>Password</b></label>
+	      			<input type="password" placeholder="Enter Password" name="psw" required>
 
-      			<label for="psw"><b>Repeat Password</b></label>
-      			<input type="password" placeholder="Repeat Password" name="psw" required>
-        
-      			<button  class="footer" type="submit">Sign In</button>
-      			<span class="container1"> Don't have an account?<a class="new" href="Sign_Up.html">Create new one</a></span>
+	      			<label for="psw"><b>Repeat Password</b></label>
+	      			<input type="password" placeholder="Repeat Password" name="psw" required>
+	        
+	      			<button  class="footer" type="submit">Sign In</button>
+	      			<span class="container1"> Don't have an account?<a class="new" href="Sign_Up.html">Create new one</a></span>
 
-    		</div>
-
-    		
-  		</form>
+	    		</div>
+			</form>
+		</div>
+		<div class="row">
+			<div class="col1">
+				<img src="img/1-2.jpg">
+				<p class="text">Vegetarian Pancakes</p>
 			</div>
-			<div class="row">
-						<div class="col">
-							<img src="1-2.jpg">
-							<p class="text">Vegetarian Pancakes</p>
-						</div>
-						<div class="col">
-							<img src="3.jpg">
-							<p class="text">Homemade jogurt</p>
-						</div>
-						<div class="col">
-							<img src="3-2.jpg">
-							<p class="text">Apple French Toast</p>
-						</div>
-					</div>
+			<div class="col1">
+				<img src="img/3.jpg">
+				<p class="text">Homemade jogurt</p>
+			</div>
+			<div class="col1">
+				<img src="img/3-2.jpg">
+				<p class="text">Apple French Toast</p>
+			</div>
+		</div>
+	</div>
+</div>    	 
+
+<div  id="about" class="About-us">
+	<div class="box">
+		<h1>Healthy Tips</h1>
+		<div class="row-1">
+			<div class="column">
+				<div class="card">
+					<h3>Drink more water</h3>
+					<img src="img/tricks.jpg">
 				</div>
-				
 			</div>
-    	 
+			<div class="column">
+				<div class="card">
+					<h3>Eat healthy food</h3>
+					<img src="img/oranges.jpg">
+				</div>
+			</div>
+			<div class="column">
+				<div class="card">
+					<h3>Drink coffee</h3>
+					<img src="img/coffe.jpg">
+				</div>
+			</div>
+			<div class="text-inf">
+					<p>Drinking enough water can have numerous benefits.Surprisingly, it can boost the number of calories you burn.Two studies note that it can increase metabolism by 24–30% over 1–1.5 hours. This can amount to 96 additional calories burned if you drink 8.4 cups (2 liters) of water per day.The optimal time to drink it is before meals. One study showed that downing 2.1 cups (500 ml) of water 30 minutes before each meal increased weight loss by 44%.</p>
+			</div>
+			<div class="text-inf-1">
+					<p>Vegetables and fruits are loaded with prebiotic fiber, vitamins, minerals, and many antioxidants, some of which have potent biological effects.Studies show that people who eat the most vegetables and fruits live longer and have a lower risk of heart disease, type 2 diabetes, obesity, and other illnesses.</p>
+			</div>
+			<div class="text-inf-2">
+					<p>Coffee is very healthy.It’s high in antioxidants, and studies have linked coffee intake to longevity and a reduced risk of type 2 diabetes, Parkinson’s and Alzheimer’s diseases, and numerous other illnesses</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<footer id="contact">
+		<p class="item1">Be Healthy<p>
+		<div class="item2">
+			<table>
+				<tr>
+					<td><a href="" title="Home Page">Home</a></td>
+					<td><a href="" title="Check out all recipes">Recipes</a></td>
+					<td><a href="" title="Best dishes for Holidays">Holidays</a></td>
+				</tr>
+				<tr>
+					<td><a href="" title="Best tools">Kitchen</a></td>
+					<td><a href="" title="Our contest">Contests</a></td>
+					<td><a href="" title="Everything about food">Food News</a></td>
+				</tr>
+				<tr>
+					<td><a href="" title="Our Magazines">Magazines</a></td>
+					<td><a href="" title="Everything about this blog">About Us</a></td>
+					<td><a href="" title="Help">How-To</a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="item3">
+			<h6>Follow us on:</h6>
+			<a href="https://www.facebook.com/" target="_blank" title="Check out our facebook page"><img src="img/fb.png" alt="facebook"></a>
+			<a href="https://www.instagram.com/" target="_blank" title="Check out our instagram page"><img src="img/ins.png" alt="instagram"></a>
+			<a href="https://twitter.com/" target="_blank" title="Check out our twitter page"><img src="img/twi.png" alt="twitter"></a>
+                       	<a href="https://www.pinterest.com/" target="_blank" title="Check out our pinterest page"><img src="img/pi.png" alt="pinterest"></a>
+			<a href="https://www.youtube.com/" target="_blank" title="Check out our youtube page"><img src="img/y.png" alt="youtube"></a>
+		</div>
+		<div class="item4"></div>
+		<div class="item5"><i><b><a>© 2020 Kopach production</a></b></i></div>
+		<div class="item6"></div>
+	</footer>
+
 
 <script>
 // Get the modal
@@ -111,8 +182,6 @@ window.onclick = function(event) {
     }
 }
 </script>
-
-
 
 
 
